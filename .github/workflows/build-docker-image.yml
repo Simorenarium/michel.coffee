@@ -1,4 +1,4 @@
-name: Publish Ogma Docker Image
+name: Publish Michel.coffeela Docker Image
 
 on:
   push:
