@@ -1,4 +1,4 @@
-name: Publish Michel.coffeela Docker Image
+name: Publish Michel.coffee Docker Image
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         run: echo ${{secrets.PKGS_LOGIN_PASS}} | docker login https://docker.pkg.github.com -u Simorenarium --password-stdin
 
       - name: Build the Docker image
-        run: cd bot && docker build . -t docker.pkg.github.com/simorenarium/michel.coffee/website:${{ github.run_id }} -t docker.pkg.github.com/simorenarium/michel.coffee/website:latest
+        run: docker build . -t docker.pkg.github.com/simorenarium/michel.coffee/website:${{ github.run_id }} -t docker.pkg.github.com/simorenarium/michel.coffee/website:latest
 
       - name: Push Docker - run id
         run: docker push docker.pkg.github.com/simorenarium/michel.coffee/website:${{ github.run_id }}
